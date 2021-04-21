@@ -27,7 +27,7 @@ lower case or false if it does not.
 
 const containsW = (str) => {
   let regex= /(w)/g;
- return regex.test(str);
+  return regex.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,7 +46,7 @@ For example:
 
 const isNum = (input) => {
   let regex= /[0-9]/g;
- return regex.test(input);
+  return regex.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -74,9 +74,12 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  let regex=/^\w/;
-   return regex(str);
-
+  let regex=/[A-Z](\w)*/g;
+  let arr1=[];
+  if (regex.test(str)){
+    return str.match(regex);
+  }
+  return arr1;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -88,7 +91,13 @@ regular expression pattern to return a new array containing any cities that begi
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let regex=/^([A-J])\w*/g;
+  let arr1=[];
+  arr.forEach( item =>{
+    if(item.match(regex))
+      arr1.push(item);
+  });
+  return arr1;
 };
 
 /* ------------------------------------------------------------------------------------------------
