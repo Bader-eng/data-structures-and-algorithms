@@ -69,11 +69,10 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
- let reg=/[a,e,o,i,u]/i;
- let  arry=arr.filter((item)=>{
-   return reg.test(item);});
-   return arry
- }
+  let reg=/[a,e,o,i,u]/i;
+  let arry=arr.filter((item)=>{
+    return reg.test(item);});
+  return arry;
 };
 
 
