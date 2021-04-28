@@ -73,8 +73,7 @@ const filterStringsWithVowels = (arr) => {
  let  arry=arr.filter((item)=>{
    return reg.test(item);});
    return arry
- }
-};
+ };
 
 
 /* ------------------------------------------------------------------------------------------------
