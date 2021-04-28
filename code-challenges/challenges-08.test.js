@@ -9,8 +9,14 @@ return the last 10 characters from that string as elements of an array.
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str){
-  let=a+b
+  let arr=str.split('');
+  if(arr.length>=9){
+    let newARR=arr.splice(arr.length-10);
+    return (newARR);
+  }
+  else return (arr);
 }
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -21,7 +27,8 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const typeNum = (arr) => {
-  // Solution code here...
+  let newarr=arr.filter(item=> typeof item=== 'number');
+  return newarr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -33,7 +40,8 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
 const containsAnd = (arr) => {
-  // Solution code here...
+  let newarr=arr.filter(item => item.includes('and')=== true);
+  return newarr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -45,7 +53,8 @@ For example, oddValues([1,2,3]) returns [1,3].
 ------------------------------------------------------------------------------------------------ */
 
 const oddValues = (arr) => {
-  // Solution code here...
+  let newarr=arr.filter(item => item%2 !==0);
+  return newarr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,20 +69,26 @@ For example, filterStringsWithVowels('gregor','hound','xyz') returns ['gregor', 
 
 
 const filterStringsWithVowels = (arr) => {
-  // Solution code here...
+ let reg=/[a,e,o,i,u]/i;
+ let  arry=arr.filter((item)=>{
+   return reg.test(item);});
+   return arry
+ }
 };
 
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
-Write a function named notInFirstArray that, given two arrays as input, uses filter to return an array of all the elements in the second array that are not included in the first array.
+Write a function named notInFirstArray that, given two arrays as input, 
+uses filter to return an array of all the elements in the second array that are not included in the first array.
 
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
 const notInFirstArray = (forbiddenValues, arr) => {
-  // Solution code here...
+  let newarr=arr.filter(item => !forbiddenValues.includes(item))
+  return newarr;
 };
 
 /* ------------------------------------------------------------------------------------------------
