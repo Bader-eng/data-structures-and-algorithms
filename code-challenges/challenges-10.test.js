@@ -43,7 +43,6 @@ For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
 const count = (target, input) => {
-  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,7 +56,6 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
- 
   let arr=input.reduce((sum,number)=> sum.concat(number),[]);
   let newarr=arr.reduce((sum,number) =>{
     return sum + number;
@@ -151,39 +149,40 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  let arr=data.filter(names=>{
-    if(names.gender ==='female' || names.gender==='male'
+  let arr=data.filter(names => {
+    if(names.gender ==='female' || names.gender ==='male')
     {
-      return names.name
+      return names.name;
     }
   });
-  let newarr=arr.mao(p=>
-    {
-      return p.name;
-    });
-    let newarr2 =newarr.join('and')
-    return newarr2
+  let newarr=arr.map( p =>
+  {
+    return p.name;
+  });
+  let newarr2 =newarr.join( ' and ' );
+  return newarr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 
 
-Write a function named findShortest that, given the Star Wars data from Challenge 6, uses any combination of filter, map and reduce to return the name of the shortest character.
+Write a function named findShortest that, given the Star Wars data from Challenge 6, 
+uses any combination of filter, map and reduce to return the name of the shortest character.
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
   let filterValue = data.filter(theForce =>{
-    if (theForce.gender !== 'female' & theForce.gender !=='male' & theForce.name !== 'C-3PO')
+    if (theForce.gender !== 'female' & theForce.gender !== 'male' & theForce.name !== 'C-3PO')
     {
       return theForce.name;
     }
-});
-let arr=filterValue.map(element=>
+  });
+  let arr=filterValue.map(element=>
   {
     return element.name;
   });
   let star= arr.join(' and ');
-  return star
+  return star;
 };
 /* ------------------------------------------------------------------------------------------------
 TESTS
